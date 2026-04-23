@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gyan Sagar | Vishwa ka Saara Gyaan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+
+        .hero-gradient {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            transition: all 0.3s ease;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #3b82f6;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-nav">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center">
+                    <span class="text-2xl font-bold text-blue-600 tracking-tight">GYAN<span class="text-orange-500">SAGAR</span></span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-6">
+                        <a href="#home" class="hover:text-blue-600 px-3 py-2 font-medium">Home</a>
+                        <a href="#categories" class="hover:text-blue-600 px-3 py-2 font-medium">Categories</a>
+                        <a href="#trending" class="hover:text-blue-600 px-3 py-2 font-medium">Trending</a>
+                        <a href="#about" class="hover:text-blue-600 px-3 py-2 font-medium">About Us</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-600">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-gradient pt-32 pb-20 px-4 text-white">
+        <div class="max-w-7xl mx-auto text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">Seekhiye, Samajhiye, Aur Badhiye</h1>
+            <p class="text-xl mb-10 opacity-90">Vishwa ka sabse bada hindi gyan portal jahan aapko milega har sawal ka jawab.</p>
+            
+            <div class="max-w-2xl mx-auto relative">
+                <input type="text" id="searchInput" placeholder="Search topics (e.g. Science, History, Tech)..." 
+                    class="w-full py-4 px-6 rounded-full text-gray-900 focus:outline-none shadow-2xl">
+                <button class="absolute right-2 top-2 bg-blue-600 hover:bg-blue-700 p-2 px-6 rounded-full transition">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section id="categories" class="py-16 max-w-7xl mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-12 text-center">Gyan ki Categories</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
+            <!-- Category Item 1 -->
+            <div class="category-card bg-white p-8 rounded-2xl shadow-sm border border-gray-100 text-center cursor-pointer">
+                <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6 text-blue-600 text-2xl">
+                    <i class="fas fa-flask"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2">Vigyan (Science)</h3>
+                <p class="text-gray-500 text-sm">Physics se lekar Space tak ki jaankari.</p>
+            </div>
+
+            <!-- Category Item 2 -->
+            <div class="category-card bg-white p-8 rounded-2xl shadow-sm border border-gray-100 text-center cursor-pointer">
+                <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6 text-green-600 text-2xl">
+                    <i class="fas fa-microchip"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2">Technology</h3>
+                <p class="text-gray-500 text-sm">AI, Coding aur naye gadgets ka gyan.</p>
+            </div>
+
+            <!-- Category Item 3 -->
+            <div class="category-card bg-white p-8 rounded-2xl shadow-sm border border-gray-100 text-center cursor-pointer">
+                <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6 text-orange-600 text-2xl">
+                    <i class="fas fa-landmark"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2">Itihas (History)</h3>
+                <p class="text-gray-500 text-sm">Prachin sabhyata aur mahan rajaon ki katha.</p>
+            </div>
+
+            <!-- Category Item 4 -->
+            <div class="category-card bg-white p-8 rounded-2xl shadow-sm border border-gray-100 text-center cursor-pointer">
+                <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6 text-purple-600 text-2xl">
+                    <i class="fas fa-heartbeat"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2">Health</h3>
+                <p class="text-gray-500 text-sm">Yoga, Fitness aur swasth jeevan ke nuskhe.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content Grid -->
+    <section id="trending" class="bg-gray-100 py-16 px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex justify-between items-end mb-10">
+                <div>
+                    <h2 class="text-3xl font-bold">Trending Articles</h2>
+                    <p class="text-gray-600">Aaj ke sabse jyada pade jaane wale topics</p>
+                </div>
+                <button class="text-blue-600 font-semibold hover:underline">View All <i class="fas fa-arrow-right ml-2"></i></button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10" id="articleGrid">
+                <!-- Article 1 -->
+                <article class="bg-white rounded-xl overflow-hidden shadow-md group">
+                    <div class="h-48 bg-gray-200 relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=600" alt="Space" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <span class="absolute top-4 left-4 bg-blue-600 text-white text-xs px-3 py-1 rounded-full">Science</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3 hover:text-blue-600 cursor-pointer">Kya Black Hole ek Time Machine hai?</h3>
+                        <p class="text-gray-600 text-sm mb-4">Space science ki is romanchak duniya mein jaaniye ki kya hum bhavishya mein ja sakte hain...</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs text-gray-400"><i class="far fa-clock mr-1"></i> 5 min read</span>
+                            <button class="text-blue-600 font-bold text-sm">Read More</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Article 2 -->
+                <article class="bg-white rounded-xl overflow-hidden shadow-md group">
+                    <div class="h-48 bg-gray-200 relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=600" alt="AI" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <span class="absolute top-4 left-4 bg-green-600 text-white text-xs px-3 py-1 rounded-full">Tech</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3 hover:text-green-600 cursor-pointer">Artificial Intelligence kaise kaam karta hai?</h3>
+                        <p class="text-gray-600 text-sm mb-4">AI ke piche ki coding aur algorithms ko asan bhasha mein samjhein aur jaaniye iska bhavishya.</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs text-gray-400"><i class="far fa-clock mr-1"></i> 8 min read</span>
+                            <button class="text-green-600 font-bold text-sm">Read More</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Article 3 -->
+                <article class="bg-white rounded-xl overflow-hidden shadow-md group">
+                    <div class="h-48 bg-gray-200 relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80&w=600" alt="Education" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <span class="absolute top-4 left-4 bg-orange-600 text-white text-xs px-3 py-1 rounded-full">History</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3 hover:text-orange-600 cursor-pointer">Sindhu Ghati Sabhyata ke Rahasya</h3>
+                        <p class="text-gray-600 text-sm mb-4">Duniya ki sabse purani shahari sabhyata ke baare mein wo baatein jo aapne nahi suni hongi.</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs text-gray-400"><i class="far fa-clock mr-1"></i> 10 min read</span>
+                            <button class="text-orange-600 font-bold text-sm">Read More</button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Knowledge Quiz Section -->
+    <section class="py-16 bg-blue-900 text-white text-center">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-6">Test Your Knowledge!</h2>
+            <p class="mb-8 opacity-80">Check karein ki aapne aaj kitna sikha. Rozana naye quizzes aur challenges.</p>
+            <button onclick="startQuiz()" class="bg-orange-500 hover:bg-orange-600 px-10 py-4 rounded-full font-bold transition transform hover:scale-105">Start Quiz Now</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="about" class="bg-gray-900 text-gray-400 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-12 border-b border-gray-800 pb-12">
+            <div class="col-span-1 md:col-span-1">
+                <span class="text-2xl font-bold text-white mb-6 block">GYAN<span class="text-orange-500">SAGAR</span></span>
+                <p class="text-sm leading-relaxed">Humara maqsad hai har kisi tak sahi aur sateek jaankari asan bhasha mein pahunchana. Shiksha hi sabse bada dhan hai.</p>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-6">Quick Links</h4>
+                <ul class="space-y-4 text-sm">
+                    <li><a href="#" class="hover:text-white transition">Latest News</a></li>
+                    <li><a href="#" class="hover:text-white transition">Privacy Policy</a></li>
+                    <li><a href="#" class="hover:text-white transition">Contact Support</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-6">Follow Us</h4>
+                <div class="flex space-x-4">
+                    <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-600 hover:text-white transition"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-400 hover:text-white transition"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-pink-600 hover:text-white transition"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-6">Newsletter</h4>
+                <p class="text-sm mb-4">Har hafte naya gyan pane ke liye subscribe karein.</p>
+                <div class="flex">
+                    <input type="email" placeholder="Email address" class="bg-gray-800 border-none px-4 py-2 rounded-l-md focus:ring-1 focus:ring-blue-500 w-full outline-none">
+                    <button class="bg-blue-600 text-white px-4 py-2 rounded-r-md hover:bg-blue-700 transition">Join</button>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-8 text-xs">
+            &copy; 2024 Gyan Sagar Portal. All Rights Reserved. Made with ❤️ for Knowledge Seekers.
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Simple search filter simulation
+        const searchInput = document.getElementById('searchInput');
+        const articles = document.querySelectorAll('article');
+
+        searchInput.addEventListener('input', (e) => {
+            const term = e.target.value.toLowerCase();
+            articles.forEach(article => {
+                const title = article.querySelector('h3').innerText.toLowerCase();
+                if(title.includes(term)) {
+                    article.style.display = 'block';
+                } else {
+                    article.style.display = 'none';
+                }
+            });
+        });
+
+        // Simple Quiz function
+        function startQuiz() {
+            const quizOverlay = document.createElement('div');
+            quizOverlay.className = "fixed inset-0 bg-black bg-opacity-90 z-[100] flex items-center justify-center p-4";
+            quizOverlay.innerHTML = `
+                <div class="bg-white text-gray-900 p-8 rounded-2xl max-w-lg w-full">
+                    <h2 class="text-2xl font-bold mb-4">Sawal No. 1</h2>
+                    <p class="text-lg mb-6">Duniya ka sabse chota desh kaunsa hai?</p>
+                    <div class="space-y-3">
+                        <button onclick="checkAnswer(true)" class="w-full py-3 px-4 border border-gray-300 rounded-lg hover:bg-blue-50 transition text-left">A. Vatican City</button>
+                        <button onclick="checkAnswer(false)" class="w-full py-3 px-4 border border-gray-300 rounded-lg hover:bg-blue-50 transition text-left">B. Monaco</button>
+                        <button onclick="checkAnswer(false)" class="w-full py-3 px-4 border border-gray-300 rounded-lg hover:bg-blue-50 transition text-left">C. Maldives</button>
+                    </div>
+                    <button onclick="this.parentElement.parentElement.remove()" class="mt-6 text-gray-400 hover:text-gray-600 block mx-auto">Close</button>
+                </div>
+            `;
+            document.body.appendChild(quizOverlay);
+        }
+
+        function checkAnswer(isCorrect) {
+            if(isCorrect) {
+                alert("Sahi Jawab! Aapki knowledge kamaal ki hai! 🌟");
+            } else {
+                alert("Oops! Galat jawab. Koshish karte rahein! 📚");
+            }
+        }
+
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('mobile-menu-button');
+        menuBtn.onclick = () => {
+            // Future logic for mobile menu expansion
+            alert("Mobile Menu functionality could be added here for full scale project!");
+        };
+    </script>
+</body>
+</html>
